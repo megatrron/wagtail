@@ -1,4 +1,3 @@
-# home/tests.py
 
 from django.test import TestCase
 from wagtail.models import Page
