@@ -148,7 +148,9 @@ This tutorial uses `http://127.0.0.1:8000` as the URL for your development serve
 ```
 ### Running and Writing Tests
 
-Wagtail now includes basic tests in the `home/tests.py` file when you create a new project using `wagtail start`. These tests check:
+When you create a new project using `wagtail start`, there will be a set of basic tests included in the `home/tests.py` file.
+
+These tests check:
 
 - If the **Root Page** (ID=1) is automatically created.
 - If the **Homepage** is created as a child of the root page.
