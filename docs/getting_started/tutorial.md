@@ -162,6 +162,7 @@ To run the tests, navigate to your project folder and run:
 
 ```sh
 python manage.py test home
+```
 
 You can now access the [admin interface](https://guide.wagtail.org/en-latest/concepts/wagtail-interfaces/#admin-interface) by logging into <http://127.0.0.1:8000/admin> with the username and password that you entered while creating an admin user with `createsuperuser`.
 
