@@ -1,24 +1,24 @@
-
 from wagtail.test.utils import WagtailPageTestCase
 from wagtail.models import Page
 from home.models import HomePage
 
-
-class HomeSetUpTests(TestCase):
+class HomeSetUpTests(WagtailPageTestCase):
     """
     Tests steps needed by follow up tests
     """
 
     def test_root_create(self):
-        Page.objects.get(pk=1)
+        root_page = Page.objects.get(pk=1)
+        self.assertIsNotNone(root_page) 
 
     def test_homepage_create(self):
         root_page = Page.objects.get(pk=1)
-        self.homepage = HomePage(title='Home')
-        root_page.add_child(instance=self.homepage)
+        homepage = HomePage(title="Home")
+        root_page.add_child(instance=homepage)
+        self.assertTrue(HomePage.objects.filter(title="Home").exists())
 
 
-class HomeTests(TestCase):
+class HomeTests(WagtailPageTestCase):
     """
     Class for testing homepage logic
     """
@@ -27,6 +27,7 @@ class HomeTests(TestCase):
         """
         Set up the testing environment.
         """
+
         root_page = Page.objects.get(pk=1)
         self.homepage = HomePage(title='Home')
         root_page.add_child(instance=self.homepage)
@@ -35,4 +36,5 @@ class HomeTests(TestCase):
         """
         Tests if BlogIndexPage can be created.
         """
+
         raise NotImplementedError("The tests are not implemented yet.")
