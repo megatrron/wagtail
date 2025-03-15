@@ -152,9 +152,9 @@ When you create a new project using `wagtail start`, there will be a set of basi
 
 These tests check:
 
-- If the **Root Page** (ID=1) is automatically created.
-- If the **Homepage** is created as a child of the root page.
-- If a **BlogIndexPage** (or other page types) can be added.
+-   If the _root `Page`_ (ID=1) is automatically created.
+-   If the _home `Page`_ is created as a child of the root page.
+-   If a `BlogIndexPage` (or other page types) can be added.
 
 #### Running the Tests
 To run the tests, navigate to your project folder and run:
