@@ -1,5 +1,5 @@
 
-from django.test import TestCase
+from wagtail.test.utils import WagtailPageTestCase
 from wagtail.models import Page
 from home.models import HomePage
 
