@@ -2,6 +2,8 @@ from django.db.models import ForeignKey
 from django.urls import path
 from django.utils.functional import cached_property
 from django.utils.translation import gettext as _
+from django.contrib.auth import get_user_model
+from django.templatetags.static import static
 
 from wagtail.admin.forms.models import register_form_field_override
 from wagtail.admin.views.generic import chooser as chooser_views
@@ -224,3 +226,24 @@ class ChooserViewSet(ViewSet):
             if self.widget_telepath_adapter_class:
                 adapter = self.widget_telepath_adapter_class()
                 register_telepath_adapter(adapter, self.widget_class)
+
+class UserChooserViewSet(ChooserViewSet):
+    model = get_user_model()
+    chooser_template = "wagtailadmin/chooser/user_chooser.html"
+
+    def get_chosen_item_data(self, user):
+        """Return the data for the chosen user, including the preview image."""
+        avatar_url = (
+            user.avatar.url if hasattr(user, "avatar") and user.avatar else static("default-avatar.png")
+        )
+
+        return {
+            "id": user.id,
+            "title": user.get_full_name() or user.username,
+            "edit_url": f"/admin/users/{user.id}/",
+            "preview": {  # ✅ Add preview like the image chooser
+                "url": avatar_url,
+                "width": 100,  # Adjust as needed
+                "height": 100,  # Adjust as needed
+            },
+        }

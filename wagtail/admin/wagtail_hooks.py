@@ -51,6 +51,7 @@ from wagtail.admin.views.pages.bulk_actions import (
     UnpublishBulkAction,
 )
 from wagtail.admin.viewsets import viewsets
+from wagtail.admin.viewsets.chooser import UserChooserViewSet
 from wagtail.admin.widgets import ButtonWithDropdownFromHook, PageListingButton
 from wagtail.models import Collection, Page, Task, Workflow
 from wagtail.permissions import (
@@ -1206,3 +1207,9 @@ for action_class in [
     UnpublishBulkAction,
 ]:
     hooks.register("register_bulk_action", action_class)
+
+user_chooser_viewset = UserChooserViewSet("user_chooser")
+
+@hooks.register("register_admin_viewset")
+def register_user_chooser():
+    return user_chooser_viewset
