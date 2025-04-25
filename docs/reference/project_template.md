@@ -106,7 +106,7 @@ These tests check:
 
 -   If the _root `Page`_ (ID=1) is automatically created.
 -   That the _home `Page`_ can be created as a child of the root page.
--   If a `BlogIndexPage` (or other page types) can be added.
+-   A placeholder test for other sub-pages, such as the `BlogIndexPage`, ready for implementation.
 
 #### Running the tests
 
