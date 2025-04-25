@@ -113,7 +113,7 @@ These tests check:
 To run the tests, navigate to your project folder and run:
 
 ```sh
-python manage.py test home
+python manage.py test
 ```
 
 ### Dockerfile
