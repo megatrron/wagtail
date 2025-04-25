@@ -108,7 +108,7 @@ These tests check:
 -   If the _home `Page`_ is created as a child of the root page.
 -   If a `BlogIndexPage` (or other page types) can be added.
 
-#### Running the Tests
+#### Running the tests
 
 To run the tests, navigate to your project folder and run:
 
