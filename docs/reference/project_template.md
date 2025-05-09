@@ -116,6 +116,8 @@ To run the tests, navigate to your project folder and run:
 python manage.py test
 ```
 
+For more about testing within Django see [Writing tests with Django](inv:django#topics/testing/overview), or Wagtail specific unit testing utils, see [Testing your Wagtail site](/advanced_topics/testing).
+
 ### Dockerfile
 
 Location: `/mysite/Dockerfile`
